@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ringkasan hasil performance testing Garage21 dengan Apache JMeter.">
+  <title>Garage21 | Hasil JMeter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- <header class="header"><a class="brand" href="#top"><span class="logo">G21</span> QA Portfolio</a><span class="tool">Apache JMeter 5.6.3</span></header> -->
+  <main id="top">
+    <section class="intro">
+      <p class="eyebrow">QA PROJECT · PERFORMANCE TESTING</p>
+      <h1>Garage21 <span>Performance Test</span></h1>
+      <p>Pengujian waktu respons request pada aplikasi manajemen modifikasi dan perbaikan velg Garage21 menggunakan Apache JMeter 5.6.3 di lingkungan lokal.</p>
+    </section>
+    <section class="stats" aria-label="Ringkasan hasil">
+      <article class="stat"><span>HTTP samples</span><strong id="samples">21</strong><small>Request yang ditampilkan</small></article>
+      <article class="stat"><span>Rata-rata respons</span><strong id="average">—</strong><small>Semakin kecil, semakin cepat</small></article>
+      <article class="stat"><span>Tercepat</span><strong id="fastest">—</strong><small>Waktu respons minimum</small></article>
+      <article class="stat"><span>Terlama</span><strong id="slowest">—</strong><small>Waktu respons maksimum</small></article>
+    </section>
+    <section class="results">
+      <div class="section-title"><div><p class="eyebrow">HASIL PENGUJIAN</p><h2>Detail request</h2></div><input id="search" type="search" placeholder="Cari endpoint…" aria-label="Cari endpoint"></div>
+      <div class="table-wrap"><table><thead><tr><th>Label / Endpoint</th><th>Samples</th><th>Average (ms)</th><th>Median (ms)</th><th>90% Line (ms)</th><th>95% Line (ms)</th><th>99% Line (ms)</th><th>Min (ms)</th><th>Max (ms)</th><th>Error %</th><th>Throughput (req/s)</th><th>Received (KB/s)</th><th>Sent (KB/s)</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <p class="count" id="count">Menampilkan 21 endpoint</p>
+    </section>
+    <section class="interpretation">
+      <h2>Cara membaca hasil</h2>
+      <ul>
+        <li><b>Average:</b> rata-rata waktu respons seluruh sampel pada endpoint.</li>
+        <li><b>Median:</b> nilai tengah waktu respons setelah seluruh sampel diurutkan.</li>
+        <li><b>90% / 95% / 99% Line:</b> persentil. Contoh 90% Line = 500 ms berarti sekitar 90% sampel selesai dalam 500 ms atau kurang; sekitar 10% lebih lama.</li>
+        <li><b>Min / Max:</b> waktu respons tercepat dan terlambat yang tercatat.</li>
+        <li><b>Error %:</b> persentase sampel yang gagal menurut JMeter. 0% berarti tidak ada error yang tercatat.</li>
+        <li><b>Throughput:</b> jumlah request yang diproses per detik selama pengujian (request/second).</li>
+        <li><b>Received / Sent (KB/s):</b> kecepatan data yang diterima dari server dan dikirim ke server per detik.</li>
+        <li><b>Samples:</b> jumlah request yang tercatat untuk endpoint tersebut.</li>
+      </ul>
+      <p class="note"><b>Catatan:</b> Data ini berisi satu sampel untuk setiap endpoint. Karena itu, Average, Median, 90%, 95%, dan 99% bernilai sama pada setiap baris. Persentil belum bermakna untuk menilai sebaran performa sampai pengujian diulang dengan lebih banyak sampel. Ini bukan bukti bahwa aplikasi mampu menangani banyak pengguna sekaligus. Hasil lokal juga dapat berbeda dari server produksi.</p>
+    </section>
+  </main>
+  <footer>Garage21 · Personal QA Portfolio</footer>
+  <script src="script.js"></script>
+</body>
+</html>
